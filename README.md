@@ -6,15 +6,25 @@
 
 Ejemplo de sitio en React, utilizando la API pública de Rick and Morty. Versión desplegada en https://rickandmorty.sgarciad.me.
 
+## Tabla de contenidos <!-- omit from toc -->
+
+- [API Rick and Morty](#api-rick-and-morty)
+- [Proyecto](#proyecto)
+  - [Clonar proyecto con Git](#clonar-proyecto-con-git)
+  - [Estructura de directorios](#estructura-de-directorios)
+  - [Detalles de desarrollo](#detalles-de-desarrollo)
+  - [Scripts de NPM](#scripts-de-npm)
+  - [Dependencias externas utilizadas](#dependencias-externas-utilizadas)
+    - [Dependencias de desarrollo](#dependencias-de-desarrollo)
+    - [Dependencias del proyecto](#dependencias-del-proyecto)
+
 ## API Rick and Morty
 
 Para el desarrollo de este ejemplo, se usó la [API pública de Rick and Morty][ram-api-web]. Se puede visitar [su documentación][ram-api-docs-web] para mas detalles.
 
 ## Proyecto
 
-### Git
-
-#### Clonar proyecto
+### Clonar proyecto con Git
 
 Para clonar el proyecto:
 
@@ -83,6 +93,29 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 | `npm run build`   | Construye la aplicación, para su posterior despliegue.             |
 | `npm run preview` | Permite visualizar la versión final y construída de la aplicación. |
 
+### Dependencias externas utilizadas
+
+#### Dependencias de desarrollo
+
+| Paquete                           | Descripción                                                |
+| --------------------------------- | ---------------------------------------------------------- |
+| [`vite`][devdep1]                 | Herramientas de desarrollo frontend. Reemplazo de Webpack. |
+| [`sass`][devdep2]                 | Preprocesador de CSS                                       |
+| [`@vitejs/plugin-react`][devdep3] | Plugin de Vite para soportar React                         |
+| [`@types/react`][devdep4]         | Tipos para la librería React                               |
+| [`@types/react-dom`][devdep5]     | Tipos para la librería ReactDOM                            |
+
+#### Dependencias del proyecto
+
+| Paquete                    | Descripción                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| [`react`][dep1]            | Librería de JavaScript que permite crear interfaces de usuario.                                                           |
+| [`react-dom`][dep2]        | Permite la interacción entre la librería de React, y el DOM en desarrollo web.                                            |
+| [`react-router-dom`][dep3] | Librería que permite generar enrutamiento en la aplicación de React.                                                      |
+| [`@popperjs/core`][dep4]   | Librería con utilidades para mostrar mensajes y avisos.                                                                   |
+| [`bootstrap`][dep5]        | Librería de estilos, muy conocida y con gran cantidad de documentación y ejemplos.                                        |
+| [`react-icons`][dep6]      | Librería que permite incorporar una gran cantidad de librerías de íconos con licencia libre, como un componente de React. |
+
 [ram-api-docs-web]: https://rickandmortyapi.com/documentation
 [ram-api-web]: https://rickandmortyapi.com/documentation
 [vscode-badge]: https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=for-the-badge
@@ -99,3 +132,14 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 [vite-web]: https://vitejs.dev/
 [npm-badge]: https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=for-the-badge
 [npm-web]: https://www.npmjs.com/
+[devdep1]: https://www.npmjs.com/package/vite
+[devdep2]: https://www.npmjs.com/package/sass
+[devdep3]: https://www.npmjs.com/package/@vitejs/plugin-react
+[devdep4]: https://www.npmjs.com/package/@types/react
+[devdep5]: https://www.npmjs.com/package/@tyles/react-dom
+[dep1]: https://www.npmjs.com/package/react
+[dep2]: https://www.npmjs.com/package/react-dom
+[dep3]: https://www.npmjs.com/package/react-router-dom
+[dep4]: https://www.npmjs.com/package/@popperjs/coreOK
+[dep5]: https://www.npmjs.com/package/bootstrap
+[dep6]: https://www.npmjs.com/package/react-icons

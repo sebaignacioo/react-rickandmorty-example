@@ -1,6 +1,19 @@
+@import "@styles/variables";
+
 .details {
   font-size: 0.65rem;
   a {
     font-size: 0.65rem;
   }
+}
+.alive {
+  color: darken($color: $ram_success, $amount: 25);
+}
+
+.dead {
+  color: $ram_danger;
+}
+
+.unknown {
+  color: $ram_warning;
 }

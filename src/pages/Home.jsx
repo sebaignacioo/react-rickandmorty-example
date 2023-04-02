@@ -1,17 +1,23 @@
 import { BiHomeAlt2 } from "react-icons/bi";
-import { SiReact } from "react-icons/si";
+import { SiGithub, SiReact, SiVite } from "react-icons/si";
 
 import styles from "@styles/modules/Home.module.scss";
 
 import Button from "@components/Button";
 
+/**
+ * Componente Home
+ * @returns Componente de React que renderiza la página de inicio
+ * @example
+ * <Home />
+ */
 const Home = () => {
   return (
     <main className={`${styles.home} d-flex flex-row align-items-center`}>
       <section className="col">
         <div className="d-flex flex-column">
           <section className="col py-5 text-center">
-            <div className="row py-lg-5 justify-content-center flex-grow-1">
+            <div className="row py-lg-5 justify-content-center">
               <div className="col-lg-6 col-md-8 mx-auto">
                 <h1 className="fw-light display-2">
                   <BiHomeAlt2 /> Inicio
@@ -37,8 +43,19 @@ const Home = () => {
             </div>
             <div className="row mt-5">
               <div className="d-flex flex-col">
-                <div className="col-12 col-md-6 mx-auto">
-                  Sitio web creado con <SiReact /> React.
+                <div className="col-12 col-md-6 pt-5 mx-auto">
+                  <p className={styles.creditos}>
+                    Sitio web creado por{" "}
+                    <a
+                      href="https://sgarciad.me/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Sebastián García Delgadillo
+                    </a>
+                    , utilizando <SiReact /> React y <SiVite /> Vite. Desplegado
+                    con <SiGithub /> GitHub Pages.
+                  </p>
                 </div>
               </div>
             </div>

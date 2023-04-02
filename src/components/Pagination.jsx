@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Componente Paginación
+ * @param pag Objeto con la información de la paginación __(object)__
+ * @returns Componente de React que renderiza la paginación
+ * @example
+ * <Pagination
+ * pag={pagObject}
+ * />
+ */
 const Pagination = ({ pag }) => {
   return (
     <nav className="bg-light py-3">

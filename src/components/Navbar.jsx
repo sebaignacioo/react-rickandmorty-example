@@ -1,7 +1,11 @@
 import { BiHomeAlt2, BiTv, BiUser } from "react-icons/bi";
+import { SiGithub } from "react-icons/si";
 
 import { Link, NavLink } from "react-router-dom";
 
+import styles from "@styles/modules/Navbar.module.scss";
+
+// Definimos un array de objetos con las rutas y los íconos
 const links = [
   {
     to: "/",
@@ -20,6 +24,21 @@ const links = [
   },
 ];
 
+/**
+ * Componente NavbarLink
+ * @param to Ruta a la que redirigir al hacer click
+ * @param Icon Ícono a mostrar
+ * @param name Nombre del enlace
+ * @param className Clase CSS a aplicar al enlace
+ * @param disabled Deshabilitar el enlace
+ * @returns Componente de React que renderiza un enlace de la barra de navegación
+ * @example
+ * <NavbarLink
+ * to="/"
+ * Icon={BiHomeAlt2}
+ * name="Inicio"
+ * />
+ */
 const NavbarLink = ({ to, Icon, name, className, disabled }) => {
   return (
     <NavLink
@@ -35,6 +54,12 @@ const NavbarLink = ({ to, Icon, name, className, disabled }) => {
   );
 };
 
+/**
+ * Componente NavbarToggler
+ * @returns Componente de React que renderiza el botón de despliegue de la barra de navegación
+ * @example
+ * <NavbarToggler />
+ */
 const NavbarToggler = () => {
   return (
     <button
@@ -51,6 +76,12 @@ const NavbarToggler = () => {
   );
 };
 
+/**
+ * Componente Navbar
+ * @returns Componente de React que renderiza la barra de navegación
+ * @example
+ * <Navbar />
+ */
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
@@ -67,6 +98,20 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <div className={`${styles.rlinks}`}>
+            <div className="container">
+              <div className="row">
+                <a
+                  href="https://github.com/sebaignacioo/react-rickandmorty-example"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="col nav-item"
+                >
+                  <SiGithub /> Repositorio de Github
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

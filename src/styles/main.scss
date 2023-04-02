@@ -1,16 +1,15 @@
-// Custom.scss
-// Option B: Include parts of Bootstrap
+@import "@styles/variables";
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$primary: #24325f;
-$secondary: #a6eee6;
-$danger: #fb6467;
-$success: #c1f762;
-$warning: #e89242;
-$info: #82491e;
+$primary: $ram_primary;
+$secondary: $ram_secondary;
+$danger: $ram_danger;
+$success: $ram_success;
+$warning: $ram_warning;
+$info: $ram_info;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";

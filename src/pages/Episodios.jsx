@@ -1,19 +1,34 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
+import Pagination from "@components/Pagination";
+
+// Función para obtener el número de temporada y episodio
 const getEpisode = (episodeString) => ({
   season: Number.parseInt(episodeString.substring(1, 3)),
   episode: Number.parseInt(episodeString.substring(4, 6)),
 });
 
+/**
+ * Componente Episodios
+ * @returns Componente de React que renderiza la página de episodios
+ * @example
+ * <Episodios />
+ * @see https://reactrouter.com/web/api/Hooks/useparams
+ */
 const Episodios = () => {
+  // Obtenemos el parámetro de la URL
   const params = useParams();
+
+  // Estado para guardar los episodios
   const [episodios, setEpisodios] = useState([]);
+  // Estado para guardar la información de la paginación
   const [pag, setPag] = useState({
     current: params.pagina ?? 1,
-    total: params.pagina ?? 1,
+    total: 1,
   });
 
+  // Obtenemos los episodios usando useEffect. El segundo parámetro es un array de dependencias. Si este array está vacío, el efecto se ejecutará una sola vez, cuando el componente se monte. Si el array contiene una variable, el efecto se ejecutará cada vez que esta variable cambie de valor. En este caso, el efecto se ejecutará cada vez que cambie el valor de la variable pag.
   useEffect(() => {
     const getEpisodios = async () => {
       const response = await fetch(
@@ -30,6 +45,7 @@ const Episodios = () => {
     <div className="p-5">
       <h1 className="display-6">Episodios</h1>
       <hr />
+      <Pagination pag={pag} />
       <ul className="list-group">
         {episodios.map((episodio) => (
           <li
@@ -48,41 +64,7 @@ const Episodios = () => {
           </li>
         ))}
       </ul>
-      <nav className="bg-light py-3">
-        <ul className="pagination justify-content-center">
-          <li
-            className={`page-item ${
-              Number.parseInt(pag.current) === 1 ? "disabled" : ""
-            }`}
-          >
-            <Link
-              className="page-link"
-              to={`/episodios/p/${Number.parseInt(pag.current) - 1}`}
-            >
-              Anterior
-            </Link>
-          </li>
-          <li className="page-item active">
-            <a className="page-link">
-              {pag.current}/{pag.total}
-            </a>
-          </li>
-          <li
-            className={`page-item ${
-              Number.parseInt(pag.current) === Number.parseInt(pag.total)
-                ? "disabled"
-                : ""
-            }`}
-          >
-            <Link
-              className="page-link"
-              to={`/episodios/p/${Number.parseInt(pag.current) + 1}`}
-            >
-              Siguiente
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Pagination pag={pag} />
     </div>
   );
 };
