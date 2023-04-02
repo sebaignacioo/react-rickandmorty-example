@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
-import "./styles/main.scss";
+import "@styles/main.scss";
 
-import Home from "./pages/Home";
-import Personajes from "./pages/Personajes";
-import Episodios from "./pages/Episodios";
+import Home from "@pages/Home";
+import Personajes from "@pages/Personajes";
+import Episodios from "@pages/Episodios";
 
-import Layout from "./layouts/Layout";
+import Layout from "@layouts/Layout";
 
 const App = () => (
   <Routes>

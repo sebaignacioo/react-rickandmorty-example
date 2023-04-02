@@ -1,9 +1,9 @@
 import { BiHomeAlt2 } from "react-icons/bi";
 import { SiReact } from "react-icons/si";
 
-import styles from "../styles/modules/Home.module.scss";
+import styles from "@styles/modules/Home.module.scss";
 
-import Button from "../components/Button";
+import Button from "@components/Button";
 
 const Home = () => {
   return (

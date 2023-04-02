@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
 import { FaMars, FaVenus, FaGenderless } from "react-icons/fa";
 
-import styles from "../styles/modules/Card.module.scss";
+import styles from "@styles/modules/Card.module.scss";
 
 const CardGender = ({ gender }) => {
   return (

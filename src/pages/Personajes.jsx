@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Card from "../components/Card";
-import Pagination from "../components/Pagination";
+import Card from "@components/Card";
+import Pagination from "@components/Pagination";
 
 const Personajes = () => {
   const params = useParams();
