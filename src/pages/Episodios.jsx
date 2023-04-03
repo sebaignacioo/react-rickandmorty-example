@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Pagination from "@components/Pagination";
 
@@ -19,33 +19,49 @@ const getEpisode = (episodeString) => ({
 const Episodios = () => {
   // Obtenemos el parámetro de la URL
   const params = useParams();
+  // Hook para navegar entre páginas
+  const navigate = useNavigate();
 
   // Estado para guardar los episodios
   const [episodios, setEpisodios] = useState([]);
   // Estado para guardar la información de la paginación
-  const [pag, setPag] = useState({
-    current: params.pagina ?? 1,
-    total: 1,
-  });
+  const [pag, setPag] = useState(1);
+  const [totalPag, setTotalPag] = useState(1);
 
   // Obtenemos los episodios usando useEffect. El segundo parámetro es un array de dependencias. Si este array está vacío, el efecto se ejecutará una sola vez, cuando el componente se monte. Si el array contiene una variable, el efecto se ejecutará cada vez que esta variable cambie de valor. En este caso, el efecto se ejecutará cada vez que cambie el valor de la variable pag.
+  // Este useEffect se ejecuta sólo 1 vez (cuando se renderiza)
   useEffect(() => {
-    const getEpisodios = async () => {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/episode?page=${params.pagina ?? 1}`
-      );
-      const data = await response.json();
-      setPag((a) => ({ current: params.pagina ?? 1, total: data.info.pages }));
-      setEpisodios(data.results);
-    };
-    getEpisodios();
-  }, [pag]);
+    console.log(
+      "-> Este useEffect se ejecuta sólo 1 vez (cuando se renderiza)"
+    );
+    if (!params.pagina) navigate("/episodios/p/1", { replace: true });
+    setPag((params.pagina && Number.parseInt(params.pagina)) || 1);
+    fetch("https://rickandmortyapi.com/api/episode")
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalPag(Number.parseInt(data.info.pages));
+        setEpisodios(data.results);
+      });
+  }, []);
+
+  // Este useEffect se ejecuta cada vez que cambia el valor de params, es decir, cambia la página
+  useEffect(() => {
+    console.log(
+      "-> Este useEffect se ejecuta cada vez que cambia el valor de params, es decir, cambia la página"
+    );
+    fetch(`https://rickandmortyapi.com/api/episode?page=${params.pagina}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setEpisodios(data.results);
+        setPag((params.pagina && Number.parseInt(params.pagina)) || 1);
+      });
+  }, [params]);
 
   return (
     <div className="p-5">
       <h1 className="display-6">Episodios</h1>
       <hr />
-      <Pagination pag={pag} />
+      <Pagination pag={{ current: pag, total: totalPag }} path="episodios" />
       <ul className="list-group">
         {episodios.map((episodio) => (
           <li
@@ -64,7 +80,7 @@ const Episodios = () => {
           </li>
         ))}
       </ul>
-      <Pagination pag={pag} />
+      <Pagination pag={{ current: pag, total: totalPag }} path="episodios" />
     </div>
   );
 };
