@@ -50,30 +50,33 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 ├── ./src/
 │   ├── ./src/assets/
 │   ├── ./src/components/
-│   │   ├── ./src/components/Button.jsx
-│   │   ├── ./src/components/Card.jsx
-│   │   ├── ./src/components/Navbar.jsx
-│   │   └── ./src/components/Pagination.jsx
+│   │   ├── ./src/components/Button.tsx
+│   │   ├── ./src/components/Card.tsx
+│   │   ├── ./src/components/Navbar.tsx
+│   │   └── ./src/components/Pagination.tsx
 │   ├── ./src/layouts/
-│   │   └── ./src/layouts/Layout.jsx
+│   │   └── ./src/layouts/Layout.tsx
 │   ├── ./src/pages/
-│   │   ├── ./src/pages/Episodios.jsx
-│   │   ├── ./src/pages/Home.jsx
-│   │   └── ./src/pages/Personajes.jsx
+│   │   ├── ./src/pages/Episodios.tsx
+│   │   ├── ./src/pages/Home.tsx
+│   │   └── ./src/pages/Personajes.tsx
 │   ├── ./src/styles/
 │   │   ├── ./src/styles/modules/
 │   │   │   ├── ./src/styles/modules/Card.module.scss
 │   │   │   └── ./src/styles/modules/Home.module.scss
 │   │   └── ./src/styles/main.scss
-│   ├── ./src/App.jsx
-│   └── ./src/main.jsx
+│   ├── ./src/App.tsx
+│   ├── ./src/main.tsx
+│   └── ./src/vite-env.d.ts
 ├── ./.gitignore
 ├── ./CNAME
 ├── ./index.html
 ├── ./package-lock.json
 ├── ./package.json
 ├── ./README.md
-└── ./vite.config.js
+├── ./vite.config.ts
+├── ./tsconfig.json
+└── ./tsconfig.node.json
 ```
 
 ### Detalles de desarrollo
@@ -81,7 +84,7 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 |                          |                                                               |
 | ------------------------ | ------------------------------------------------------------- |
 | **IDEs**                 | [![vscode-badge]][vscode-web]                                 |
-| **Lenguajes y entornos** | [![js-badge]][js-web] [![react-badge]][react-web]             |
+| **Lenguajes y entornos** | [![ts-badge]][ts-web] [![react-badge]][react-web]             |
 | **Estilos**              | [![bootstrap-badge]][bootstrap-web] [![sass-badge]][sass-web] |
 | **Utilidades**           | [![vite-badge]][vite-web] [![npm-badge]][npm-web]             |
 
@@ -101,7 +104,9 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 | --------------------------------- | ---------------------------------------------------------- |
 | [`vite`][devdep1]                 | Herramientas de desarrollo frontend. Reemplazo de Webpack. |
 | [`sass`][devdep2]                 | Preprocesador de CSS                                       |
+| [`typescript`][devdep6]           | Soporte para lenguaje TypeScript                           |
 | [`@vitejs/plugin-react`][devdep3] | Plugin de Vite para soportar React                         |
+| [`@types/node`][devdep7]          | Tipos para Node.js (para path)                             |
 | [`@types/react`][devdep4]         | Tipos para la librería React                               |
 | [`@types/react-dom`][devdep5]     | Tipos para la librería ReactDOM                            |
 
@@ -120,8 +125,8 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 [ram-api-web]: https://rickandmortyapi.com/documentation
 [vscode-badge]: https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=for-the-badge
 [vscode-web]: https://code.visualstudio.com/
-[js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge
-[js-web]: https://developer.mozilla.org/es/docs/Web/JavaScript
+[ts-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge
+[ts-web]: https://www.typescriptlang.org/
 [react-badge]: https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge
 [react-web]: https://reactjs.org/
 [sass-badge]: https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=for-the-badge
@@ -136,7 +141,9 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 [devdep2]: https://www.npmjs.com/package/sass
 [devdep3]: https://www.npmjs.com/package/@vitejs/plugin-react
 [devdep4]: https://www.npmjs.com/package/@types/react
-[devdep5]: https://www.npmjs.com/package/@tyles/react-dom
+[devdep5]: https://www.npmjs.com/package/@types/react-dom
+[devdep6]: https://www.npmjs.com/package/typescript
+[devdep7]: https://www.npmjs.com/package/@types/node
 [dep1]: https://www.npmjs.com/package/react
 [dep2]: https://www.npmjs.com/package/react-dom
 [dep3]: https://www.npmjs.com/package/react-router-dom
