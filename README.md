@@ -136,7 +136,7 @@ git clone -b typescript https://github.com/sebaignacioo/react-rickandmorty-examp
 [devdep2]: https://www.npmjs.com/package/sass
 [devdep3]: https://www.npmjs.com/package/@vitejs/plugin-react
 [devdep4]: https://www.npmjs.com/package/@types/react
-[devdep5]: https://www.npmjs.com/package/@tyles/react-dom
+[devdep5]: https://www.npmjs.com/package/@types/react-dom
 [dep1]: https://www.npmjs.com/package/react
 [dep2]: https://www.npmjs.com/package/react-dom
 [dep3]: https://www.npmjs.com/package/react-router-dom
