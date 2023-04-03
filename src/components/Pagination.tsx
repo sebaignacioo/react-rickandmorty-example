@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 
+type PaginationType = {
+  current: number;
+  total: number;
+};
+
+type PaginationProps = {
+  path: string;
+  pag: PaginationType;
+};
+
 /**
  * Componente Paginación
  * @param pag Objeto con la información de la paginación __(object)__
@@ -9,19 +19,12 @@ import { Link } from "react-router-dom";
  * pag={pagObject}
  * />
  */
-const Pagination = ({ pag }) => {
+const Pagination = ({ path, pag }: PaginationProps) => {
   return (
     <nav className="bg-light py-3">
       <ul className="pagination justify-content-center">
-        <li
-          className={`page-item ${
-            Number.parseInt(pag.current) === 1 ? "disabled" : ""
-          }`}
-        >
-          <Link
-            className="page-link"
-            to={`/personajes/p/${Number.parseInt(pag.current) - 1}`}
-          >
+        <li className={`page-item ${pag.current === 1 ? "disabled" : ""}`}>
+          <Link className="page-link" to={`/${path}/p/${pag.current - 1}`}>
             Anterior
           </Link>
         </li>
@@ -31,16 +34,9 @@ const Pagination = ({ pag }) => {
           </a>
         </li>
         <li
-          className={`page-item ${
-            Number.parseInt(pag.current) === Number.parseInt(pag.total)
-              ? "disabled"
-              : ""
-          }`}
+          className={`page-item ${pag.current === pag.total ? "disabled" : ""}`}
         >
-          <Link
-            className="page-link"
-            to={`/personajes/p/${Number.parseInt(pag.current) + 1}`}
-          >
+          <Link className="page-link" to={`/${path}/p/${pag.current + 1}`}>
             Siguiente
           </Link>
         </li>

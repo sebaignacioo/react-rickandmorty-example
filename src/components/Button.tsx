@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 
+type ButtonProps = {
+  type?: "primary" | "secondary" | "success" | "danger" | "warning" | "info";
+  text: string;
+  className?: string;
+  to: string;
+};
+
 /**
  * Componente Botón
  * @param type Tipo de botón
@@ -8,7 +15,7 @@ import { Link } from "react-router-dom";
  * @param to Ruta a la que redirigir al hacer click
  * @returns Componente de React que renderiza un botón
  */
-const Button = ({ type, text, className, to }) => {
+const Button = ({ type, text, className, to }: ButtonProps) => {
   return (
     <Link to={to} className={`btn btn-${type ?? "primary"} ${className ?? ""}`}>
       {text}

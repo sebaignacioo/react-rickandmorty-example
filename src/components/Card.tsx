@@ -4,6 +4,35 @@ import { FaMars, FaVenus, FaGenderless } from "react-icons/fa";
 // Importamos los estílos como módulo.
 import styles from "@styles/modules/Card.module.scss";
 
+type CardGenderProps = {
+  gender: "Male" | "Female" | "unknown";
+};
+
+type APILocation = {
+  name: string;
+  url: string;
+};
+
+type CardDetailsProps = {
+  origin: APILocation;
+  location: APILocation;
+  status: "Alive" | "Dead" | "unknown";
+};
+
+type CardProps = {
+  personaje: {
+    id: number;
+    name: string;
+    status: "Alive" | "Dead" | "unknown";
+    species: string;
+    type: string;
+    image: string;
+    gender: "Male" | "Female" | "unknown";
+    origin: APILocation;
+    location: APILocation;
+  };
+};
+
 /**
  * Componente CardGender
  * @param gender Género del personaje __(string)__
@@ -12,7 +41,7 @@ import styles from "@styles/modules/Card.module.scss";
  * // Renderiza un ícono para género masculino
  * <CardGender gender="Male" />
  */
-const CardGender = ({ gender }) => {
+const CardGender = ({ gender }: CardGenderProps) => {
   return (
     <>
       {gender === "Male" && <FaMars color="#01A6EA" />}
@@ -35,7 +64,7 @@ const CardGender = ({ gender }) => {
  *  status="Alive"
  * />
  */
-const CardDetails = ({ origin, location, status }) => {
+const CardDetails = ({ origin, location, status }: CardDetailsProps) => {
   /*
     Cada vez que se renderiza el componente, se crea un estado local
     para mostrar el estado del personaje. Este estado se inicializa
@@ -101,7 +130,7 @@ const CardDetails = ({ origin, location, status }) => {
  * personaje={personajeObject}
  * />
  */
-const Card = ({ personaje }) => {
+const Card = ({ personaje }: CardProps) => {
   // Desestructuramos las propiedades del personaje, según el JSON de la API.
   const { image, name, gender, species, origin, location, status } = personaje;
 

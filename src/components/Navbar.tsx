@@ -5,6 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 
 import styles from "@styles/modules/Navbar.module.scss";
 
+type NavbarLinkProps = {
+  to: string;
+  Icon: any;
+  name: string;
+  className?: string;
+  disabled?: boolean;
+};
+
 // Definimos un array de objetos con las rutas y los íconos
 const links = [
   {
@@ -39,13 +47,18 @@ const links = [
  * name="Inicio"
  * />
  */
-const NavbarLink = ({ to, Icon, name, className, disabled }) => {
+const NavbarLink = ({
+  to,
+  Icon,
+  name,
+  className,
+  disabled,
+}: NavbarLinkProps) => {
   return (
     <NavLink
       to={to}
-      className={`nav-link ${({ isActive }) => (isActive ? "active" : "")} ${
-        className ?? ""
-      }`}
+      className={`nav-link ${({ isActive }: any) =>
+        isActive ? "active" : ""} ${className ?? ""}`}
       unselectable={disabled ? "on" : "off"}
       key={name}
     >
