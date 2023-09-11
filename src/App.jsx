@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
-import "@styles/main.scss";
-import "bootstrap";
 
 import Home from "@pages/Home";
 import Personajes from "@pages/Personajes";
 import Episodios from "@pages/Episodios";
+import Login from "@pages/Login";
 
 import Layout from "@layouts/Layout";
 
@@ -40,6 +39,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/personajes/p?/:pagina?" element={<Personajes />} />
         <Route path="/episodios/p?/:pagina?" element={<Episodios />} />
+        <Route path ="/login" element={<Login />} />
       </Route>
     </Routes>
   );

@@ -1,0 +1,27 @@
+h1{
+    color: red;
+}
+
+
+
+.video-face{
+    width: 100%;
+    border:1px solid red;
+    position: absolute!important;
+    top: -50% !important;
+    left: 50%;
+    transform: translate(-50% 50%);
+}
+
+
+.wrapper-l{
+    width: 700px!important;
+   height: 200px!important;
+   border:2px solid green;  
+   position:relative !important;
+}
+
+.video-face canvas{
+    color:red!important;
+
+}
