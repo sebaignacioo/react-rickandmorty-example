@@ -43,9 +43,8 @@ const NavbarLink = ({ to, Icon, name, className, disabled }) => {
   return (
     <NavLink
       to={to}
-      className={`nav-link ${({ isActive }) => (isActive ? "active" : "")} ${
-        className ?? ""
-      }`}
+      className={({ isActive }) =>
+        `nav-link ${isActive ? "active" : ""} ${className ?? ""}`}
       unselectable={disabled ? "on" : "off"}
       key={name}
     >
