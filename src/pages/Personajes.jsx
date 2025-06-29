@@ -9,7 +9,7 @@ import Pagination from "@components/Pagination";
  * @returns Componente de React que renderiza la página de personajes
  * @example
  * <Personajes />
- * @see https://reactrouter.com/web/api/Hooks/useparams
+ * @see https://reactrouter.com/en/main/hooks/use-params
  * @see https://reactjs.org/docs/hooks-reference.html#useeffect
  * @see https://reactjs.org/docs/hooks-reference.html#usestate
  */

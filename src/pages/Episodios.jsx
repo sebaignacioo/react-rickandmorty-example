@@ -14,8 +14,8 @@ const getEpisode = (episodeString) => ({
  * @returns Componente de React que renderiza la página de episodios
  * @example
  * <Episodios />
- * @see https://reactrouter.com/web/api/Hooks/useparams
- */
+ * @see https://reactrouter.com/en/main/hooks/use-params
+*/
 const Episodios = () => {
   // Obtenemos el parámetro de la URL
   const params = useParams();
