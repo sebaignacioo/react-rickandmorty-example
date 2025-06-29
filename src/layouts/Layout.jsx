@@ -7,8 +7,8 @@ import Navbar from "@components/Navbar";
  * @returns Componente de React que renderiza el layout de la aplicación
  * @example
  * <Layout />
- * @see https://reactrouter.com/web/api/Outlet
- */
+ * @see https://reactrouter.com/en/main/components/outlet
+*/
 const Layout = () => {
   return (
     <div className="bg-light">

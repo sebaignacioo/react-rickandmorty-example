@@ -14,9 +14,9 @@ import Layout from "@layouts/Layout";
  * @returns Componente de React que renderiza la aplicación
  * @example
  * <App />
- * @see https://reactrouter.com/web/api/Routes
- * @see https://reactrouter.com/web/api/Route
- */
+ * @see https://reactrouter.com/en/main/components/routes
+ * @see https://reactrouter.com/en/main/components/route
+*/
 const App = () => {
   console.log(
     "%cBienvenido a la aplicación de " +
